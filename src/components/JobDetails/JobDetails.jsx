@@ -22,6 +22,7 @@ const JobDetails = () => {
     job_responsibility,
     educational_requirements,
     experiences,
+    contact_information,
   } = job;
 
       const handleApplyJob = ()=>{
@@ -41,7 +42,7 @@ const JobDetails = () => {
         </div>
       </div>
       <div className="grid gap-4 md:grid-cols-4 mt-20">
-        <div className="border md:col-span-3">
+        <div className="border md:col-span-3 pl-3 pt-2">
           <p className="text-xs font-bold text-slate-500"><span className="text-black text-base">Job Description :</span> {job_description}</p>
           <p className="text-xs font-bold text-slate-500 mt-4"><span className="text-black text-base">Job Responsibility: </span> {job_responsibility}</p>
           <p className="text-xs font-bold text-slate-500 mt-4"><span className="text-black 
@@ -56,8 +57,9 @@ const JobDetails = () => {
           <p className="text-xs font-bold text-slate-500 p-4"><span className="text-black text-base">Job Title : </span>{job_title}</p>
           <p className="text-black text-base font-bold p-3">Contact Information</p>
           <hr />
-          <p>gfffd{phone}</p>
-          <p>{email}</p>
+          <p className="text-xs font-bold text-slate-500 p-4"><span className="text-black text-base">Phone : </span>{contact_information.phone}</p>
+          <p className="text-xs font-bold text-slate-500 p-4"><span className="text-black text-base">Email: </span>{contact_information .email}</p>
+          <p className="text-xs font-bold text-slate-500 p-4"><span className="text-black text-base">Address :</span>{contact_information.address}</p>
           <button onClick={handleApplyJob} className="p-2 rounded-lg  btn-primary border-0  bg-gradient-to-r from-blue-400 to-blue-700 hover:to-blue-700 w-full">
             Apply Now
           </button>
