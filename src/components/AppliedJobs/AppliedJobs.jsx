@@ -4,6 +4,7 @@ import { getStoredJobApplication } from "../../Utility/localStoage";
 import bg1 from "../../assets/images/bg1.png";
 import bg2 from "../../assets/images/bg2.png";
 import AppliedJobsDetail from "../AppliedJobsDetail/AppliedJobsDetail";
+import { Helmet } from "react-helmet-async";
 
 
 const AppliedJobs = () => {
@@ -45,6 +46,11 @@ const AppliedJobs = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>
+      Applied Jobs
+      </title>
+      </Helmet>
       <div className="flex justify-between">
         <div>
           <img src={bg1} alt="" />

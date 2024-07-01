@@ -1,15 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import {
-  createBrowserRouter, RouterProvider,} from "react-router-dom";
-import Root from './components/Root/Root';
-import Home from './components/Home/Home';
-import AppliedJobs from './components/AppliedJobs/AppliedJobs';
-import ErrorPage from './components/ErrorPage/ErrorPage';
-import JobDetails from './components/JobDetails/JobDetails';
-
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./components/Root/Root";
+import Home from "./components/Home/Home";
+import AppliedJobs from "./components/AppliedJobs/AppliedJobs";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
+import JobDetails from "./components/JobDetails/JobDetails";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -22,23 +20,23 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/applide',
+        path: "/applide",
         element: <AppliedJobs></AppliedJobs>,
-        loader: ()=> fetch('/jobs.json')
+        loader: () => fetch("/jobs.json"),
       },
       {
-        path: '/job/:id',
+        path: "/job/:id",
         element: <JobDetails></JobDetails>,
-        loader: () => fetch('/jobs.json'),
+        loader: () => fetch("/jobs.json"),
       },
     ],
   },
 ]);
 
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  </React.StrictMode>
+);

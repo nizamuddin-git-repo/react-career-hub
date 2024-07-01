@@ -4,6 +4,7 @@ import bg2 from "../../assets/images/bg2.png";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../Utility/localStoage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -32,6 +33,11 @@ const JobDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>
+        Job Details
+        </title>
+      </Helmet>
       <div className="flex justify-between">
         <div>
           <img src={bg1} alt="" />
